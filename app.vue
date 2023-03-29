@@ -1,8 +1,8 @@
 <template>
   <div class="bg-yellow-50 h-full">
     <div class="p-10 mx-auto min-h-screen h-full lg:w-9/12 xl:w-6/12 text-center">
-      <h1 class="text-4xl font-bold text-gray-800">⚡ Watt ⚡</h1>
-      <div class="flex flex-row">
+      <h1 class="text-4xl font-bold text-gray-800">⚡ Watt can I power? ⚡</h1>
+      <div class="flex flex-row mt-10">
         <input 
           type="text" 
           class="w-full p-2 justify-center text-xl text-gray-800 border border-gray-300 rounded focus:outline-yellow-300 flex flex-col" 
@@ -23,7 +23,7 @@
           {{ appliance }}
         </p>
       </div>
-      <div class="p-10">Created by <a href="https://www.lucaskchang.com" target="_blank">Lucas Chang</a> | Made with <a href="" target="_blank">Tailwind CSS and Nuxt.js</a></div>
+      <div class="p-10">Created by <a href="https://www.lucaskchang.com" target="_blank">Lucas Chang</a> | Made with <a href="https://github.com/lukajaa/watt/" target="_blank">Tailwind CSS and Nuxt.js</a></div>
     </div>
   </div>
 </template>
@@ -40,7 +40,7 @@ const can_power = computed(function () {
   for (const [appliance, wattage] of Object.entries(appliances)) {
     if (temp_watts / wattage >= 1) {
       let times = Math.floor(temp_watts / wattage);
-      output.push(`${appliance} x${times}`);
+      output.push(`${appliance} x${times.toLocaleString("en-US")}`);
       temp_watts -= wattage * times;
     }
   }

@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   target: 'static',
   modules: [
-      '@nuxtjs/tailwindcss'
+      '@nuxtjs/tailwindcss',
+      'nuxt-gtag',
   ],
   gtag: {
     id: 'G-QNLZ5NY7HH'
